@@ -19,8 +19,20 @@ Ultron AI is a Python-based project inspired by the fictional character Ultron f
 
 ```shell
 git clone https://github.com/your-username/ultron-ai.git
+```
 
 2. Install the required dependencies:
 
 ```shell
 pip install -r requirements.txt
+```
+
+3. Run the ultron_ai.py file:
+```shell
+python ultron_ai.py
+```
+
+4. Start interacting with Ultron by entering your queries or statements in the terminal.
+
+
+###Customization
