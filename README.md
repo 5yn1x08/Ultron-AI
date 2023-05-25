@@ -1,6 +1,6 @@
 # Ultron AI
 
-Ultron AI is a Python-based project inspired by the fictional character Ultron from the Marvel Comics universe. It aims to simulate a conversational interaction with an AI assistant.
+Ultron AI is a Python-based project inspired by the fictional character Ultron from the Marvel Comics universe. It aims to simulate a conversational interaction with an AI assistant. Its a base model for AI.
 
 ## Features
 
@@ -19,3 +19,8 @@ Ultron AI is a Python-based project inspired by the fictional character Ultron f
 
 ```shell
 git clone https://github.com/your-username/ultron-ai.git
+
+2. Install the required dependencies:
+
+```shell
+pip install -r requirements.txt
