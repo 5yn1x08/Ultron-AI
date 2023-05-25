@@ -11,7 +11,7 @@ Ultron AI is a Python-based project inspired by the fictional character Ultron f
 ## Requirements
 
 - Python 3.x
-- `win32com` library for Windows (to enable text-to-speech functionality using SAPI5)
+- `pyttsx3` library for Windows (to enable text-to-speech functionality using SAPI5)
 
 ## Usage
 
