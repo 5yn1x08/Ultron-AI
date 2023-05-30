@@ -89,31 +89,6 @@ def sendEmail(to, content):
     server.sendmail('your email id', to, content)
     server.close()
 
-def remember():
-    reminder_file = open("data.txt", 'w')
-    speak("what should i remember?")
-    rem = takecommand().lower()
-    reminder_file.write(rem)
-        
-
-def fix(file_path):
-    # Open the file in read mode
-    with open(file_path, 'r') as file:
-        # Read the contents of the file
-        content = file.read()
-
-    # Replace "my" with "your"
-    modified_content = content.replace("my", "your")
-
-    # Write the modified contents back to the file
-    with open(file_path, 'w') as file:
-        file.write(modified_content)
-
-# Usage example:
-file_path = "data.txt"
-fix(file_path)
-
-
 #under development
 # def run(self):
 #     speak("please say wakeup to continue")
@@ -121,6 +96,7 @@ fix(file_path)
 #         self.query = self.takecommand()
 #         if "are you there" or "are you there" in self.query:
 #             self.TaskExecution()
+
 
 
 def TaskExecution():
@@ -144,9 +120,6 @@ def TaskExecution():
         elif "thank you" in query or "thanks" in query:
             speak("it's my pleasure sir.")
 
-        elif "who are you" in query:
-            speak(personal())
-
         elif "open notepad" in query:
             speak("ok sir, Opening notepad!")
             npath = "C:\\Windows\\System32\\notepad.exe"
@@ -155,12 +128,7 @@ def TaskExecution():
         elif "shut up ultron" in query:
             speak('sir dont bully me or i will call your girlfriend')
         
-        elif "remember" in query:
-            remember()
-            
-        elif ("do you know anything" in query or "what do you remembered" in query):
-            file_path = 'data.txt'
-            fix(file_path)
+        elif ("do you know anything" in query or "remember" in query):
             reminder_file = open("data.txt", 'r')
             speak("You said me to remember that: " + reminder_file.read())
 
@@ -200,6 +168,7 @@ def TaskExecution():
                 os.system('cmd /k "speedtest"')
             except:
                 speak('there is some issue')
+
 
         elif "play music" in query:
             music_dir = "C:\\Users\\NUCLEYA\\Music"
@@ -259,7 +228,7 @@ def TaskExecution():
                 pass
 
         elif "send whatsapp message" in query:
-            kit.sendwhatmsg("", "this msg is sent by AI",13,15)
+            kit.sendwhatmsg("+919104179793", "this msg is sent by AI",13,15)
 
         elif "take screenshot" in query or "take a screenshot" in query:
             speak('sir, please tell me the name for this screenshot file')
@@ -288,7 +257,7 @@ def TaskExecution():
             try:
                 speak("what should i say?")
                 content = takecommand().lower()
-                to = ""
+                to = "nisarg0806@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent")
 
@@ -336,7 +305,7 @@ def TaskExecution():
             temp = data.find('div',class_="BNeawe").text
             speak(f"current {search} is {temp}")
 
-        elif "shutdown" in query:
+        elif "no thanks" in query:
             speak("thanks for using me sir, have a good day.")
             sys.exit()
 
@@ -347,5 +316,8 @@ if __name__ == "__main__":
         if "daddy's home" in permission:
             intro() and speak("Welcomeback sir!!")
             TaskExecution()
-        elif "wake up ultron" in permission:
+        if "wake up ultron" in permission:
             TaskExecution()
+        elif "shutdown ultron" in permission:
+            speak('thanks for using me sir and have a good day!')
+            sys.exit()
